@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.itheima.domain.OrderItem" table="orderItem">
+		<id name="orderId" column="orderId">
+			<generator class="native"/>
+		</id>
+		<property name="userId" column="userId"/>
+		<property name="bookId" column="bookId"/>
+		<property name="num" column="num"/>
+		<property name="orderDate" column="orderDate"/>
+		<property name="location" column="location"/>
+		<property name="price" column="price"/>
+		
+	</class>
+	
+</hibernate-mapping>    

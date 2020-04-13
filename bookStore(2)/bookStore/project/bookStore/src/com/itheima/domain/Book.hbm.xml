@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+
+	<class name="com.itheima.domain.Book" table="book">
+		<id name="bookID" column="bookID">
+			<generator class="native"/>
+		</id>
+		<property name="bookName" column="bookName"/>
+		<property name="authorName" column="authorName"/>
+		<property name="ISBN" column="ISBN"/>
+		<property name="genre" column="genre"/>
+		<property name="publisher" column="publisher"/>
+		<property name="pages" column="pages"/>
+		<property name="price" column="price"/>
+		<property name="number" column="number"/>
+		
+		<property name="sailBook" column="sailBook"/>
+		<property name="pubAddress" column="pubAddress"/>
+		<property name="pubEmail" column="pubEmail"/>
+		<property name="pubPhone" column="pubPhone"/>
+		<property name="pubBank" column="pubBank"/>
+		
+	</class>
+	
+</hibernate-mapping>    

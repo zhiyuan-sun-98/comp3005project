@@ -1,0 +1,213 @@
+body,
+p,
+ul,
+li {
+    padding: 0;
+    margin: 0
+}
+
+header {
+    width: 100%;
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    line-height: 70px;
+}
+
+header .logo {
+    width: 30%;
+    padding-left: 5%;
+    margin-right: 5%;
+}
+
+.logo img {
+    width: 45%;
+    margin: 0 auto;
+}
+
+#search,
+#orderNumber {
+    width: 30%;
+    margin: 20px 0;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
+nav {
+    width: 28%;
+}
+
+ul li a {
+    color: #fff;
+}
+
+.menu li {
+    float: left;
+    padding-left: 10%;
+    font-size: 28px;
+}
+
+li.pos {
+    position: relative;
+}
+
+#dot {
+    display: none;
+    position: absolute;
+    top: 2;
+    left: 2;
+}
+
+.viceMenu {
+    width: 20%;
+    margin-left: 40%;
+    font-size: 28px;
+}
+
+#allBooks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.item p {
+    padding: 8px 0;
+}
+
+.item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 20%;
+    padding: 1%;
+    margin-left: 1%;
+}
+
+input[type='button'] {
+    padding: 5px;
+    background-color: #ffd032;
+    border: none;
+}
+
+#detail {
+    width: 50%;
+    margin: 0 auto;
+}
+
+table {
+    margin-top: 30px;
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+    margin-bottom: 30px;
+}
+
+.greyLine {
+    background-color: #ffd032;
+}
+
+table tr {
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.cartTh th {
+    color: #63B8FF;
+}
+
+table td,
+table th {
+    padding: 15px 10px;
+}
+
+table th {
+    color: #fff;
+}
+
+.btn {
+    width: 40%;
+    /* margin-right: 60%; */
+    height: 65px;
+    margin: 0 auto;
+    text-align: center;
+    border: 0;
+    color: #fff;
+    background-color: #63B8FF;
+    border-radius: 15px;
+}
+
+.accountBtn {
+    width: 40%;
+    margin-left: 30%;
+    text-align: center;
+    border: 0;
+    color: #fff;
+    background-color: #63B8FF;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.orderTop {
+    margin-top: 20px;
+    font-size: 24px;
+}
+#noCart{
+    margin-top:50px;
+    font-size:28px;
+    color:#63B8FF;
+    display: none;
+}
+
+.formTop {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.addForm {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-label {
+    display: inline-block;
+    width: 10%;
+}
+
+.form-item {
+    margin-top: 12px;
+}
+
+.input {
+    width: 50%;
+    height: 25px;
+}
+
+.form-item button {
+    padding: 10px;
+    border: none;
+}
+
+#fillData {
+    margin-top: 20px;
+}
+
+footer {
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footerAbs {
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+}

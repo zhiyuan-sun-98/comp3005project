@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>bookStore</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- show all books in bookStore -->
+    <header class="layui-bg-blue">
+        <div class="logo"><a href="home.html"><img src="imgs/logo.png"></a></div>
+        <ul class="viceMenu">
+            <li><a href="sign.html">login out</a></li>
+        </ul>
+    </header>
+    <main>
+        <div id="detail">
+            <p class="orderTop"> The order number of this order is: <span id="orderNumber"></span> the specific logistics information is as follows:</p>
+            <table id="schedule">
+                <thead>
+                    <tr class="cartTh">
+                        <th>orderDate</th>
+                        <th>location</th>
+                    </tr>
+                </thead>
+                <tbody id="logContent">
+
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+    <footer class="layui-bg-blue footerAbs">
+        <p>© book Store</p>
+    </footer>
+
+    <script src="layui/layui.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/book.js"></script>
+    <script>
+        window.onload = initLog();
+    </script>
+</body>
+
+</html>

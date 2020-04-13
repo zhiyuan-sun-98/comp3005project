@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Bookstore management system</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo">Bookstore system</div>
+      <div class="layui-nav layui-layout-left">
+        <i class="layui-icon layui-icon-home layui-nav-item" style="font-size: 25px; color: #FFF;"></i>
+        <span class="sub-title layui-nav-item">Home</span>
+      </div>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item"><a href="login.html">login out</a></li>
+      </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+      <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+          <li class="layui-nav-item">
+            <a href="javascript:;" data-src="bookManage" target="_top">Book management</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;" data-src="bookAdd" target="_top">Add new book</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item"><a data-src="salesReport" target="_top">sales
+              Report</a></li>
+          <li class="layui-nav-item"><a href="javascript:;" data-src="expenditures" target="_top">expenditures
+              Report</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="layui-body">
+      <div style="padding: 15px;">
+        <iframe frameborder="0" scrolling="yes" style="width: 100%" src="bookManage.html">
+        </iframe>
+      </div>
+    </div>
+    <div class="layui-footer layui-bg-black">
+      <p>© book Store</p>
+    </div>
+  </div>
+  <style>
+    .sub-title {
+      margin-left: 15px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+    }
+  </style>
+  <script src="layui/layui.js" charset="utf-8"></script>
+  <script src="js/jquery-3.4.1.min.js" charset="utf-8"></script>
+
+  <script>
+    layui.use('element', function () {
+      var element = layui.element;
+    });
+    $(function () {
+      $(".layui-nav-item a").on("click", function () {
+        var pageSrc = $(this).attr("data-src");
+        $("iframe").attr("src", pageSrc + '.html');
+      });
+    });
+  </script>
+</body>
+
+</html>

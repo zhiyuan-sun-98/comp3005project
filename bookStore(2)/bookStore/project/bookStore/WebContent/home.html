@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>bookStore</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- show all books in bookStore -->
+    <header class="layui-bg-blue">
+        <div class="logo"><a href="home.html"><img src="imgs/logo.png"></a></div>
+        <i id="find" class="layui-icon layui-icon-search" style="font-size: 32px; color: #ffd032;"></i> 
+        <input id="search" type="text" placeholder="Enter the keyWord" />                                                                                                                                                                                                                                                                                 
+        <nav>
+            <ul class="menu">
+                <li class="pos"><a href="cart.html"><i class="layui-icon layui-icon-cart-simple" style="font-size: 40px; color: #ffd032;"></i></a>
+                    <span id="dot" class="layui-bg-orange layui-badge-rim"></span></li>
+                <li><a href="login.html">login out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="allBooks">
+
+        </div>
+    </main>
+    <footer class="layui-bg-blue">
+        <p>© book Store</p>
+    </footer>
+  
+    <script src="layui/layui.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/book.js"></script>
+    <script>
+         window.onload= init();
+    </script>
+</body>
+
+</html>

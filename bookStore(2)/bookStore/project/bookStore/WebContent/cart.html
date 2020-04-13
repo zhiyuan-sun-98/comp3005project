@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>bookStore</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- show all books in bookStore -->
+    <header class="layui-bg-blue">
+        <div class="logo"><a href="home.html"><img src="imgs/logo.png"></a></div>
+        <ul class="viceMenu">
+            <li><a href="sign.html">login out</a></li>
+        </ul>
+    </header>
+    <main>
+        <!-- Shopping cart information -->
+        <div id="detail">
+            <table id="schedule">
+                <thead>
+                    <tr class="cartTh">
+                        <th>bookName</th>
+                        <th>count</th>
+                        <th>price</th>
+                        <th>total</th>
+                    </tr>
+                </thead>
+                <tbody id="cartContent">
+
+                </tbody>
+            </table>
+            <div class="center">
+              <button type="button" class="accountBtn" id="settle">To settle accounts</button>
+            </div>
+        </div>
+        <div id="noCart">
+  
+        </div>
+
+    </main>
+    <footer class="layui-bg-blue footerAbs">
+        <p>© book Store</p>
+    </footer>
+
+    <script src="layui/layui.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/book.js"></script>
+    <script>
+        window.onload = initCart();
+    </script>
+</body>
+
+</html>

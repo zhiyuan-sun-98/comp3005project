@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Bookstore management system</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/style.css" media="all">
+</head>
+
+<body>
+    <header class="layui-bg-black">
+        <div class="logo"><a href="home.html"><img src="imgs/logo.png"></a></div>
+    </header>
+
+    <table class="table">
+        <thead>
+            <tr class="cartTh">
+                <th>BookId</th>
+                <th>bookName</th>
+                <th>authorName</th>
+                <th>ISBN</th>
+                <th>genre</th>
+                <th>inventory</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody id="bookData">
+
+        </tbody>
+    </table>
+</body>
+
+<script src="layui/layui.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/admin.js"></script>
+<script>
+    $(function(){
+        initAdmin()
+    })
+</script>

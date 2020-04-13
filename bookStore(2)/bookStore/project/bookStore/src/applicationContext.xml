@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+<context:component-scan base-package="com.itheima"/>
+<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" >
+   <property name="driverClass" value="com.mysql.jdbc.Driver" ></property>
+   <property name="jdbcUrl" value="jdbc:mysql:///bookstore" ></property>
+   <property name="user" value="root" ></property>
+   <property name="password" value="" ></property>
+</bean>	
+
+<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" >
+   <!-- <property name="configLocation" value="classpath:hibernate.cfg.xml" ></property> -->
+   <property name="dataSource" ref="dataSource"></property>
+   <property name="hibernateProperties">
+      <props>
+          <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+		  <prop key="hibernate.show_sql">true</prop>
+	   	  <prop key="hibernate.format_sql">true</prop>
+		  <prop key="hibernate.hbm2ddl.auto">update</prop>
+		  <prop key="connection.autocommit">true</prop>
+      </props>
+   </property>
+   <property name="mappingResources">
+      	<list>
+      	   <value>com/itheima/domain/User.hbm.xml</value>
+      	   <value>com/itheima/domain/Book.hbm.xml</value>
+      	   <value>com/itheima/domain/OrderItem.hbm.xml</value>
+      	   <value>com/itheima/domain/Manager.hbm.xml</value>
+      	</list>
+   </property>
+</bean>
+
+<bean id="transactionManager"  class="org.springframework.orm.hibernate5.HibernateTransactionManager" >
+    <property name="sessionFactory" ref="sessionFactory" ></property>
+</bean>
+
+<tx:annotation-driven transaction-manager="transactionManager" />
+
+<!--user -->
+<bean id="userAction" class="com.itheima.action.UserAction" scope="prototype" >
+   <property name="userService" ref="userService" ></property>
+</bean>
+
+<bean id="userService" class="com.itheima.service.UserServiceImpl" >
+  <property name="userDao" ref="userDao" ></property>
+</bean>	
+
+<bean id="userDao" class="com.itheima.dao.UserDaoImpl" >
+    <property name="sessionFactory" ref="sessionFactory" ></property>
+</bean>
+
+<!--book -->
+<bean id="bookAction" class="com.itheima.action.BookAction" scope="prototype" >
+   <property name="bookService" ref="bookService" ></property>
+</bean>
+
+<bean id="bookService" class="com.itheima.service.BookServiceImpl" >
+  <property name="bookDao" ref="bookDao" ></property>
+</bean>	
+
+<bean id="bookDao" class="com.itheima.dao.BookDaoImpl" >
+    <property name="sessionFactory" ref="sessionFactory" ></property>
+</bean>
+ 
+ <!--order -->
+<bean id="orderAction" class="com.itheima.action.OrderAction" scope="prototype" >
+   <property name="orderService" ref="orderService" ></property>
+</bean>
+
+<bean id="orderService" class="com.itheima.service.OrderServiceImpl" >
+  <property name="orderDao" ref="orderDao" ></property>
+</bean>	
+
+<bean id="orderDao" class="com.itheima.dao.OrderDaoImpl" >
+    <property name="sessionFactory" ref="sessionFactory" ></property>
+</bean>
+
+
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
